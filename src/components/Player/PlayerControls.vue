@@ -1,38 +1,29 @@
 <template>
-  <div  class="player-controls">
-    <button :class="classesShuffle" title="Shuffle"></button>
-<!--    <button-->
-<!--        class="player-controls__button icon-previous"-->
-<!--        title="Previous"-->
-<!--    ></button>-->
+  <div class="player-controls">
     <v-btn
         icon
-        :small="'skip-previous'"
-        :x-large="'skip-previous'"
+        :x-large="true"
+    >
+      <v-icon :color="'#fff'" v-text="'mdi-shuffle'"></v-icon>
+    </v-btn>
+    <v-btn
+        icon
+        :x-large="true"
     >
       <v-icon :color="'#fff'" v-text="'mdi-skip-previous'"></v-icon>
     </v-btn>
     <template v-if="false">
-<!--      <button-->
-<!--          class="player-controls__button player-controls__button&#45;&#45;pause icon-pause-circle"-->
-<!--      ></button>-->
-
+      <!--      pause>-->
     </template>
     <template v-else>
       <v-btn
           icon
-          :small="'play-circle'"
-          :x-large="'play-circle'"
+          :x-large="true"
       >
         <v-icon :color="'#fff'"
-                      v-text="'mdi-play-circle'"></v-icon>
+                v-text="'mdi-play-circle'"></v-icon>
       </v-btn>
     </template>
-
-<!--    <button-->
-<!--        class="player-controls__button icon-next"-->
-<!--        title="Next"-->
-<!--    ></button>-->
     <v-btn
         icon
         :small="'skip-next'"
@@ -40,10 +31,14 @@
     >
       <v-icon :color="'#fff'" v-text="'mdi-skip-next'"></v-icon>
     </v-btn>
-    <button :class="classesRepeat" title="Repeat"></button>
+    <v-btn
+        icon
+        :x-large="true"
+    >
+      <v-icon :color="'#fff'" v-text="'mdi-repeat'"></v-icon>
+    </v-btn>
   </div>
 </template>
-
 <script>
 
 export default {
@@ -69,9 +64,7 @@ export default {
       ];
     }
   },
-  methods: {
-
-  }
+  methods: {}
 };
 </script>
 
@@ -79,19 +72,24 @@ export default {
 .player-controls
   display: flex
   justify-content: center
+
   &__button
     margin: auto 10px
     color: gray
     font-size: 15px
     cursor: pointer
     outline: none
+
     &:hover
       color: #fff
+
     &--active
       color: green
+
     &--play,
     &--pause
       font-size: 35px
+
       &:hover
         color: #fff
         transform: scale(1.1)
