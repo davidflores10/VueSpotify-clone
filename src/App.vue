@@ -20,3 +20,15 @@ export default {
   }),
 };
 </script>
+<style lang="sass">
+
+
+.app
+  display: flex
+  flex-flow: column
+  position: absolute
+  width: 100%
+  min-width: 630px
+  height: 100vh
+  background: #333
+</style>

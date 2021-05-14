@@ -1,12 +1,16 @@
 <template>
-  <Player></Player>
+  <div>
+    <Sidebar></Sidebar>
+    <Player></Player>
+  </div>
 </template>
 
 <script>
 import Player from "./Player/Player";
+import Sidebar from "./Sidebar/Sidebar";
 export default {
 name: "Home",
-  components: {Player}
+  components: {Sidebar, Player}
 }
 </script>
 
