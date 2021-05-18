@@ -26,8 +26,8 @@
     </template>
     <v-btn
         icon
-        :small="'skip-next'"
-        :x-large="'skip-next'"
+        :small="true"
+        :x-large="true"
     >
       <v-icon :color="'#fff'" v-text="'mdi-skip-next'"></v-icon>
     </v-btn>

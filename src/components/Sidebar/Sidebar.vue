@@ -1,15 +1,15 @@
 <template>
   <div class="sidebar">
-    <div class="sidebar__inner" v-scroll >
+    <div class="sidebar__inner" >
 <!--      <sidebar-nav :links="browse" />-->
 <!--      <sidebar-nav title="Library" :links="library" />-->
 <!--      <sidebar-nav title="Playlists" :links="playlists.items" />-->
-      <v-btn icon :x-large="true">
+      <v-btn icon :x-large="true" :small="true">
         <v-icon :color="'#fff'" v-text="'mdi-spotify'"></v-icon>
       </v-btn>
       <span style="color: white">VueSpotify clone</span>
       <ul>
-        <li><a class="sidebar__init-link" href="">
+        <li><a class="sidebar__init-link selected" href="">
           <v-btn icon :x-large="true">
             <v-icon :color="'#fff'" v-text="'mdi-home'"></v-icon>
           </v-btn>
@@ -27,8 +27,8 @@
       </ul>
     </div>
 
-    <button class="sidebar__btn" @click="$modal.show('playlist-create-modal')">
-      <icon class="sidebar__btn-icon" name="plus" />
+    <button class="sidebar__btn">
+<!--      <icon class="sidebar__btn-icon" name="plus" />-->
       <span>New playlist</span>
     </button>
     <!-- @todo cover -->
@@ -87,6 +87,9 @@ export default {
     height: 40px
     padding: 0 16px
     text-decoration: none
+
+  .selected
+    background-color: #282828
 
   &__init-link span
     font-size: 14px

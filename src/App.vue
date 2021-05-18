@@ -1,27 +1,19 @@
 <template>
   <div id="app">
-<!--    <img alt="Vue logo" src="./assets/logo.png">-->
-    <Home></Home>
+    <Sidebar></Sidebar>
+    <router-view class="router-view"/>
+    <Player></Player>
   </div>
 </template>
-
-<script>
-import Home from './components/Home';
-
-export default {
-  name: 'App',
-
-  components: {
-    Home,
-  },
-
-  data: () => ({
-    //
-  }),
-};
-</script>
 <style lang="sass">
 
+.router-view
+  position: absolute
+  bottom: 90px
+  left: 232px
+  background-color: red
+  height: calc(100vh - 90px)
+  width: calc(100vw - 232px)
 
 .app
   display: flex
@@ -32,3 +24,10 @@ export default {
   height: 100vh
   background: #333
 </style>
+<script>
+import Sidebar from "./components/Sidebar/Sidebar";
+import Player from "./components/Player/Player";
+export default {
+  components: {Player, Sidebar}
+}
+</script>
