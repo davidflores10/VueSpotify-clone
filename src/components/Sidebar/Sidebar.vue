@@ -1,38 +1,44 @@
 <template>
   <div class="sidebar">
-    <div class="sidebar__inner" >
-<!--      <sidebar-nav :links="browse" />-->
-<!--      <sidebar-nav title="Library" :links="library" />-->
-<!--      <sidebar-nav title="Playlists" :links="playlists.items" />-->
+    <div class="sidebar__inner">
+      <!--      <sidebar-nav :links="browse" />-->
+      <!--      <sidebar-nav title="Library" :links="library" />-->
+      <!--      <sidebar-nav title="Playlists" :links="playlists.items" />-->
       <v-btn icon :x-large="true" :small="true">
         <v-icon :color="'#fff'" v-text="'mdi-spotify'"></v-icon>
       </v-btn>
       <span style="color: white">VueSpotify clone</span>
       <ul>
-        <li><a class="sidebar__init-link selected" href="">
-          <v-btn icon :x-large="true">
-            <v-icon :color="'#fff'" v-text="'mdi-home'"></v-icon>
-          </v-btn>
-          <span>Inicio</span></a></li>
-        <li><a class="sidebar__init-link" href="">
-          <v-btn icon :x-large="true">
-            <v-icon :color="'#fff'" v-text="'mdi-magnify'"></v-icon>
-          </v-btn>
-          <span>Búsqueda</span></a></li>
+        <router-link to="/" style="text-decoration: none">
+          <li><a class="sidebar__init-link" :class="currentRouteName ==='home' ? 'selected' : ''" href="">
+            <v-btn icon :x-large="true">
+              <v-icon :color="'#fff'" v-text="'mdi-home'"></v-icon>
+            </v-btn>
+            <span>Inicio</span></a></li>
+        </router-link>
+
+        <router-link to="/search" style="text-decoration: none">
+          <li><a class="sidebar__init-link" :class="currentRouteName ==='search' ? 'selected' : ''" href="">
+            <v-btn icon :x-large="true">
+              <v-icon :color="'#fff'" v-text="'mdi-magnify'"></v-icon>
+            </v-btn>
+            <span>Búsqueda</span></a></li>
+        </router-link>
+
         <li><a class="sidebar__init-link" href="">
           <v-btn icon :x-large="true">
             <v-icon :color="'#fff'" v-text="'mdi-library'"></v-icon>
           </v-btn>
-        <span>Tu biblioteca</span></a></li>
+          <span>Tu biblioteca</span></a></li>
       </ul>
     </div>
 
     <button class="sidebar__btn">
-<!--      <icon class="sidebar__btn-icon" name="plus" />-->
+      <!--      <icon class="sidebar__btn-icon" name="plus" />-->
       <span>New playlist</span>
     </button>
     <!-- @todo cover -->
-<!--    <playlist-create-modal />-->
+    <!--    <playlist-create-modal />-->
   </div>
 </template>
 
@@ -41,6 +47,11 @@
 
 export default {
   name: "Sidebar",
+  computed: {
+    currentRouteName() {
+      return this.$route.name;
+    }
+  }
 
 };
 </script>

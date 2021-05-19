@@ -31,9 +31,9 @@
 
 <script>
 
-import CardLong from "./shared/CardLong";
-import Card from "./shared/Card";
-import NavbarHome from "./Navbar/NavbarHome";
+import CardLong from "../shared/CardLong";
+import Card from "../shared/Card";
+import NavbarHome from "../Navbar/NavbarHome";
 
 export default {
   name: "Home",
@@ -76,7 +76,7 @@ export default {
   text-transform: none
 
 .container-spacing
-  padding: 10px 32px
+  padding: 65px 32px
 
 .card-small
   padding: 20px

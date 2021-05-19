@@ -12,7 +12,9 @@ export default {
 
 <style scoped lang="sass">
 .navbar
-  height: 80px
+  height: 60px
   width: 100%
   background-color: #212121
+  position: fixed
+  z-index: 1
 </style>
